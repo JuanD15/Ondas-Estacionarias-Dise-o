@@ -20,12 +20,6 @@ li {
     list-style-type: none;
 }
 
-#count > p{
-    font-size: 20px;
-    margin-top: -30%;
-    font-weight: 1000;
-}
-
 #container {
     height: auto;
 }
@@ -42,14 +36,15 @@ canvas {
     float: right;
 }
 
-button {
-    width: 230px;
-    background-color: #ed303c;
+#options{
     font-size: 20px;
+    font-weight: 1000;
+    width: 240px;
     border-radius: 5px;
-}button:hover {
-    cursor: pointer;
-    background-color: #fae894;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border-color: black;
 }
 
 #length {
