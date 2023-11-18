@@ -54,7 +54,7 @@ li {
 #vr {
     border-left: 3px solid black;
     height: 418px;
-    margin-top: -261px;
+    margin-top: -279px;
     margin-left: 50px;
 }
 
@@ -64,27 +64,30 @@ li {
 }
 
 .box {
+    background-color: gray;
     border: 1px solid black;
-    width: 1px;
-    height: 5px;
+    display: flex;
+    flex: auto;
+    width: 15px;
+    height: 70px;
+    padding: 0;
 }
 
 #box1 {
-    background-color: gray;
-    margin-top: -20px;
-    margin-left: 665px;
+    margin-top: -35px;
+    margin-left: 683px;
 }
 
 #box2 {
     background-color: gray;
-    margin-top: -230px;
-    margin-left: 33px;
+    margin-top: -245px;
+    margin-left: 43px;
 }
 
 canvas {
-    margin-left: 7.2%;
+    margin-left: 6.3%;
     height: 99.7%;
-    width: 85.5%;
+    width: 89%;
 }
 
 #buttons {
