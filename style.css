@@ -5,8 +5,11 @@
 }
 
 body {
-    background: linear-gradient(90deg, rgba(214, 158, 96, 1) 30%, rgba(99, 117, 102, 1) 100%);
-    padding: 0;
+    background: rgb(110,204,234);
+    background: -moz-linear-gradient(90deg, rgba(110,204,234,1) 74%, rgba(178,189,248,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(110,204,234,1) 74%, rgba(178,189,248,1) 100%);
+    background: linear-gradient(90deg, rgba(110,204,234,1) 74%, rgba(178,189,248,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6eccea",endColorstr="#b2bdf8",GradientType=1);    padding: 0;
     margin: 0;
 }
 
@@ -14,6 +17,13 @@ header {
     height: 10%;
     width: auto;
     margin-left: 25%;
+}header > h1{
+    margin-left: 10%;
+    margin-top: -3%;
+    font-size: 40px;
+}header > h2 {
+    margin-top: -5%;
+    margin-left: -10%;
 }
 
 li {
@@ -22,11 +32,12 @@ li {
 
 #container {
     height: auto;
+    margin-top: -5%;
 }
 
 canvas {
     background-color: white;
-    margin-left: 15%;
+    margin-left: 5%;
     height: 400px;
     border: 1px solid black;
     width: 50%;
@@ -34,9 +45,10 @@ canvas {
 
 #buttons {
     float: right;
+    margin-right: 5%;
 }
 
-#options{
+select{
     font-size: 20px;
     font-weight: 1000;
     width: 240px;
@@ -53,9 +65,4 @@ canvas {
     font-size: 20px;
     padding: 5px;
     text-align: center;
-}
-
-#frequencyInput::-webkit-inner-spin-button,
-#frecuencyInput::-webkit-outer-spin-button {
-    cursor: pointer;
 }
