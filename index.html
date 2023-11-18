@@ -9,86 +9,56 @@
 </head>
 
 <body>
-    <canvas id="waveCanvas" width="1200" height="500"></canvas>
-    <label for="Amplitude">Amplitude:</label>
-    <select name="Amplitude" id="Amplitude">
-        <option value="50">0.5m</option>
-        <option value="60">0.6m</option>
-        <option value="70">0.7m</option>
-        <option value="80">0.8m</option>
-        <option value="90">0.9m</option>
-        <option value="100">1.0m</option>
-    </select>
-    
-    <br>
-    <label for="Nodes">Nodes:</label>
-    
-    <select name="Nodes" id="Nodes">
-        <option value="2">1 nodos</option>
-        <option value="3">2 nodos</option>
-        <option value="4">3 nodos</option>
-        <option value="5">4 nodos</option>
-        <option value="6">5 nodos</option>
-    </select>
-    <br>
-    <label for="Frequency">Frequency:</label>
-    <select name="Frecuency" id="Frecuency">
-        <option value="0.5">0.5 Hz</option>
-        <option value="1">1 Hz</option>
-        <option value="1.5">1.5 Hz</option>
-        <option value="2">2 Hz</option>
-        <option value="2.5">2.5 hz</option>
-        <option value="3">3 Hz</option>
-    </select>
-    
-    <script>
-        const canvas = document.getElementById("waveCanvas");
-        const ctx = canvas.getContext("2d");
-        const numPoints = 1000;
-        const pointSpacing = canvas.width / numPoints;
-        let amplitude = 50;
-        let nodes = document.getElementById("Nodes").value;
-        let frequency = 1;
-        let time = 0;
+    <header>
+        <h1>Simulador de Ondas Estacionarias</h1>
+    </header>
 
-        function animateWave() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            // Phi es la posicion de los nodos.
-            const phi = (nodes) * Math.PI;
+    <div id="container">
+        <canvas id="string" width="1200" height="500"></canvas>
+        <div id="buttons">
+            <ul>
+                <li>
+                    <select name="Nodes" id="Nodes">
+                        <option value="0">Nodes Selector</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </li>
 
-            ctx.beginPath();
-            ctx.moveTo(0, canvas.height / 2);
+                <li>
+                    <input type="number" id="length" placeholder="Rope Length (cm)" value="">
+                </li>
 
-            for (let i = 0; i < numPoints; i++) {
-                const x = i * pointSpacing;
-                //Formula para la onda. 
-                const displacement = 2*amplitude * Math.sin(phi * i / numPoints) * Math.cos(frequency * time);
-                const y = canvas.height / 2 + displacement;
+                <li>
+                    <select name="Amplitude" id="Amplitude">
+                        <option value="0">Amplitude</option>
+                        <option value="50">0.5m</option>
+                        <option value="60">0.6m</option>
+                        <option value="70">0.7m</option>
+                        <option value="80">0.8m</option>
+                        <option value="90">0.9m</option>
+                        <option value="100">1.0m</option>
+                    </select>
+                </li>
 
-                ctx.lineTo(x, y);
-            }
-
-            ctx.strokeStyle = "red";
-            ctx.stroke();
-
-            time += 0.02;
-            requestAnimationFrame(animateWave);
-        }
-
-        animateWave();
-
-        document.getElementById("Amplitude").addEventListener("change", function() {
-            amplitude = parseFloat(this.value);
-        });
-
-        document.getElementById("Nodes").addEventListener("input", function(){
-            nodes = parseFloat(this.value);
-        });
-
-        document.getElementById("Frecuency").addEventListener("change", function(){
-            frequency = parseFloat(this.value);
-        });
-    </script>
+                <li>
+                    <select name="Frecuency" id="Frecuency">
+                        <option value="0">Frecuency</option>
+                        <option value="0.5">0.5 Hz</option>
+                        <option value="1">1 Hz</option>
+                        <option value="1.5">1.5 Hz</option>
+                        <option value="2">2 Hz</option>
+                        <option value="2.5">2.5 hz</option>
+                        <option value="3">3 Hz</option>
+                    </select>
+                </li>
+            </ul>
+            <script src="./Scripts/wave.js"></script>
+        </div>
+    </div>
 </body>
 
 </html>
